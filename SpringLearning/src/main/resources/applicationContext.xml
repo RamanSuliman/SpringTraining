@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="address" class="main.Address">
+		<constructor-arg value="Salford"></constructor-arg>
+		<constructor-arg value="UK"></constructor-arg>
+	</bean>
+
+    <bean id="studentbean" class="main.Student">
+		<constructor-arg value="100" type="int"></constructor-arg>
+		<constructor-arg value="Raman"></constructor-arg>
+		<constructor-arg>
+			<ref bean="address"/>
+		</constructor-arg>
+	</bean>
+
+
+	<!-- Creating list of questions and answers 
+	<bean id="question" class="collection_argument.Question">
+		<constructor-arg value="12" type="int"></constructor-arg>
+		<constructor-arg value="What is human?"></constructor-arg>
+		<constructor-arg>
+			<map>
+			<entry key-ref="quesion1" value-ref="answer1"></entry>
+			<entry key-ref="quesion2" value-ref="answer2"></entry>
+			<entry key-ref="quesion3" value-ref="answer3"></entry>
+			<entry key-ref="quesion4" value-ref="answer4"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	-->
+	
+</beans>
